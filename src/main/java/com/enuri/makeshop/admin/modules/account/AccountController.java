@@ -1,13 +1,20 @@
 package com.enuri.makeshop.admin.modules.account;
 
+import com.enuri.makeshop.admin.modules.account.validator.SignUpFormValidator;
 import com.sun.org.apache.xpath.internal.operations.Mod;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
+@RequiredArgsConstructor
 public class AccountController {
+
+    private final SignUpFormValidator signUpFormValidator;
+    private final AccountService accountService;
+    private final AccountRepository accountRepository;
 
     @GetMapping("/login")
     public String login () {
