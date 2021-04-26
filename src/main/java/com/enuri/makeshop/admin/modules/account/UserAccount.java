@@ -6,9 +6,8 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
-import java.util.List;
+
 
 /*
 로그인 처리를 위해서는 시큐리티 컨텍스트 홀더에 스프링 시큐리티가 제공하는 User 클래스를 기반으로 만들어진 token을 인풋해야 하는데 그때 Account 인스턴스를 User를 상속한 클래스로 래핑하기 위한

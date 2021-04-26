@@ -14,7 +14,7 @@
       <div class="form-group">
         <label for="nickname">닉네임</label>
         <input id="nickname" type="text" th:field="*{nickname}" class="form-control"
-               placeholder="whiteship" aria-describedby="nicknameHelp" required minlength="3" maxlength="20">
+               placeholder="이름" aria-describedby="nicknameHelp" required minlength="3" maxlength="20">
         <small id="nicknameHelp" class="form-text text-muted">
           공백없이 문자와 숫자로만 3자 이상 20자 이내로 입력하세요. 가입후에 변경할 수 있습니다.
         </small>
@@ -27,7 +27,7 @@
         <input id="email" type="email" th:field="*{email}" class="form-control"
                placeholder="your@email.com" aria-describedby="emailHelp" required>
         <small id="emailHelp" class="form-text text-muted">
-          스터디올래는 사용자의 이메일을 공개하지 않습니다.
+          비밀번호 분실 시 새 비밀번호를 전송해 드리기 위해 이메일 정보가 필요합니다.
         </small>
         <small class="invalid-feedback">이메일을 입력하세요.</small>
         <small class="form-text text-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</small>

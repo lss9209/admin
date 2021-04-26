@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
     <!-- Head -->
     <head th:fragment="head">
@@ -23,7 +25,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">홈
+                        <a class="nav-link" th:href="@{/}">홈
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
@@ -33,13 +35,29 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">작업</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" th:href="@{/profile/ + ${#authentication.name}}"> <!-- sec namespace가 ${#authentication.name}을 통해 현재 세션정보에 있는 유저 이름을 가져옴. -->
                         <a class="nav-link" href="#">개인정보</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+
+    <h3 sec:value="${#authentication.name} + '님 좋은 하루 되세요!'"></h3>
+
+    <!-- setting-menu -->
+    <div th:fragment="settings-menu (currentMenu)" class="list-group">
+        <a class="list-group-item list-group-item-action" th:classappend="${currentMenu == 'profile'}? active" href="#" th:href="@{/settings/profile}">프로필</a>
+        <a class="list-group-item list-group-item-action" th:classappend="${currentMenu == 'password'}? active" href="#" th:href="@{/settings/password}">패스워드</a>
+        <a class="list-group-item list-group-item-action list-group-item-danger" th:classappend="${currentMenu == 'account'}? active" href="#" th:href="@{/settings/account}">계정</a>
+    </div>
+
+    <!-- footer -->
+    <footer th:fragment="footer">
+        <div class="row justify-content-center">
+
+        </div>
+    </footer>
 
     <!-- Validation -->
     <script type="application/javascript" th:fragment="form-validation">
