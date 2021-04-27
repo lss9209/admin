@@ -35,15 +35,13 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">작업</a>
                     </li>
-                    <li class="nav-item" th:href="@{/profile/ + ${#authentication.name}}"> <!-- sec namespace가 ${#authentication.name}을 통해 현재 세션정보에 있는 유저 이름을 가져옴. -->
-                        <a class="nav-link" href="#">개인정보</a>
+                    <li class="nav-item"> <!-- sec namespace가 ${#authentication.name}을 통해 현재 세션정보에 있는 유저 이름을 가져옴. -->
+                        <a class="nav-link" th:href="@{'/profile/' + ${#authentication.name}}">개인정보</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-
-    <h3 sec:value="${#authentication.name} + '님 좋은 하루 되세요!'"></h3>
 
     <!-- setting-menu -->
     <div th:fragment="settings-menu (currentMenu)" class="list-group">
