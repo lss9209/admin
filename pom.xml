@@ -23,6 +23,10 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
 		<dependency>
@@ -62,11 +66,6 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-mail</artifactId>
-		</dependency>
-
 		<!-- https://mvnrepository.com/artifact/org.modelmapper/modelmapper -->
 		<!-- modelmapper는 스프링 부트가 자동으로 버전관리를 해주지 않은 써드파티 라이브러리 입니다. 따라서 갑작스레 발생할 수도 있는 버전변경 이슈에 신경써야 합니다.
 		만약, 버전이 말썽을 부린다면 그냥 전통적인 model 방식으로 회귀하면 됩니다.-->
